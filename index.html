@@ -8,37 +8,43 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <title>Mini project</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-12 col-md-12 col-lg-12">
-                <h4> Pictures </h4>
-                <ul>
-                    <li><a data-img="steve-pic" id="steve" href="#">Steve Jobs</a></li>
-                    <li><a data-img="bill-pic" id="bill" href="#">Bill Gates</a></li>
-                    <li><a data-img="jeff-pic" id="jeff" href="#">Jeff Bezos</a></li>
-                </ul>
-
-                <div class="img-div">
-                    <img class="hide" id="steve-pic"
-                        src="https://upload.wikimedia.org/wikipedia/commons/1/12/Stevejobs.jpg" alt="Pics">
-                    <img class="hide" id="bill-pic"
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bill_Gates_June_2015.png" alt="Pics">
-                    <img class="hide" id="jeff-pic"
-                        src="https://upload.wikimedia.org/wikipedia/commons/4/45/Jeff_Bezos_2016_%28cropped%29.jpg"
-                        alt="Pics">
+<div class="contianer">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h1> Weather app </h1>
+            <img style="width: 100px;margin-top: 30px;" src="./svg/weather.svg" alt="Weather icon">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 main">
+            <div id="search">
+                <label class="mr-2" for="city">City</label>
+                <input class="mr-2" type="text" id="city">
+                <button class="btn btn-warning" type="button">Show Weather !</button>
+            </div>
+            <div class="mt-4" id="load">Loading ...</div>
+            <div class="mt-4" id="weather">
+                <h1 class="mt-4 mb-4" id="weatherCity">City Name</h1>
+                <div class="mb-4" id="weatherDescription">
+                    Weather Description
+                </div>
+                <div class="mb-4" id="weatherTemperature">
+                    Temperature
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="./base.js"></script>
+<script src="./init.js"></script>
+<script src="./weather-data.js"></script>
+<script src="./base.js"></script>
 </body>
-
 </html>

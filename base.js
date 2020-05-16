@@ -1,38 +1,40 @@
-var steve = document.getElementById("steve");
-var bill = document.getElementById("bill");
-var jeff = document.getElementById("jeff");
+searchButton.addEventListener("click", searchWeather);
 
-// document.getElementById('steve').addEventListener('click', function(){
 
-// });
+function searchWeather() {
+    loadingText.style.display = "block";
+    weatherBox.style.display = "none";
+    let cityName = searchCity.value;
 
-steve.addEventListener("click", picLink);
-bill.addEventListener("click", picLink);
-jeff.addEventListener("click", picLink);
+    if (cityName.trim().length === 0) {
+        alert("Please enter a City Name");
+    }
 
-function picLink() {
-  debugger;
-  var allImages = document.querySelectorAll("img");
+    let http = new XMLHttpRequest();
+    let apiKey = "f1133f9f84102686e91644dd69fbcfa3";
+    let url = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric" + "&appid=" + apiKey;
+    let method = "GET";
 
-  //   console.log(allImages[0]);
-  //   console.log(allImages[1]);
-  //   console.log(allImages[2]);
+    http.open(method, url);
 
-  for (let i = 0; i < allImages.length; i++) {
-    allImages[i].className = "hide";
-  }
+    http.onreadystatechange = function () {
+        if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
+            let data = JSON.parse(http.responseText);
+            let weatherData = new Weather(cityName, data.weather[0].description.toUpperCase(), data.main.temp);
+            console.log(weatherData);
+            updateWeather(weatherData);
+        } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
+            alert("Something is wrong !");
+        }
+    };
+    http.send();
+}
 
-  //   allImages[0].className = 'hide';
-  //   allImages[1].className = 'hide';
-  //   allImages[2].className = 'hide';
+function updateWeather(weatherData) {
+    weatherCity.textContent = weatherData.cityName;
+    weatherDescription.textContent = weatherData.description;
+    weatherTemperature.textContent = weatherData.temperature;
 
-  var picId = this.attributes["data-img"].value;
-
-  var pic = document.getElementById(picId);
-
-  if (pic.className === "hide") {
-    pic.className = "";
-  } else {
-    pic.className = "hide";
-  }
+    loadingText.style.display = "none";
+    weatherBox.style.display = "flex";
 }

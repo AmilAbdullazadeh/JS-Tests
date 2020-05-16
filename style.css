@@ -1,59 +1,47 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-body .container .row div ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.contianer {
+  text-align: center;
+  margin-top: 3em;
+}
+
+#search {
+  margin-top: 5em;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
-body .container .row div ul li {
-  list-style-type: none;
+#search label {
+  margin-top: 8px;
 }
-
-body .container .row div ul li a {
-  text-decoration: none;
-  color: blueviolet;
-  opacity: 0.5;
+#search input {
+  border-radius: 5px;
+  box-shadow: 1px 5px 11px -6px;
+  border: none;
+  padding: 10px 10px;
 }
-
-body .container .row div .img-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-body .container .row div .img-div:hover {
-  cursor: pointer;
-}
-
-body .container .row div .img-div img {
-  width: 300px;
-  height: 400px;
-}
-
-.hide {
+#load {
   display: none;
 }
+
+#weather {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #ffffff;
+  background: #0052D4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 /*# sourceMappingURL=style.css.map */
