@@ -1,40 +1,48 @@
-searchButton.addEventListener("click", searchWeather);
+//  Scopes
 
+//**  var */
 
-function searchWeather() {
-    loadingText.style.display = "block";
-    weatherBox.style.display = "none";
-    let cityName = searchCity.value;
+// var ad = "";
 
-    if (cityName.trim().length === 0) {
-        alert("Please enter a City Name");
-    }
+// console.info(ad);
 
-    let http = new XMLHttpRequest();
-    let apiKey = "f1133f9f84102686e91644dd69fbcfa3";
-    let url = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric" + "&appid=" + apiKey;
-    let method = "GET";
+// ad = "Samir";
 
-    http.open(method, url);
+// console.info(ad);
 
-    http.onreadystatechange = function () {
-        if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
-            let data = JSON.parse(http.responseText);
-            let weatherData = new Weather(cityName, data.weather[0].description.toUpperCase(), data.main.temp);
-            console.log(weatherData);
-            updateWeather(weatherData);
-        } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
-            alert("Something is wrong !");
-        }
-    };
-    http.send();
-}
+// var ad = 122333333;
 
-function updateWeather(weatherData) {
-    weatherCity.textContent = weatherData.cityName;
-    weatherDescription.textContent = weatherData.description;
-    weatherTemperature.textContent = weatherData.temperature;
+// console.info(ad);
 
-    loadingText.style.display = "none";
-    weatherBox.style.display = "flex";
-}
+//**  let */
+
+// let soyad = "";
+
+// console.info(soyad);
+
+// soyad = "AsdSD";
+
+// console.info(soyad);
+
+// let soyad = "sdfasdf";
+
+// console.info(soyad);
+
+// for (let i = 0; i < 5; i++) {
+
+// }
+// console.info(i);
+
+//**  Const */
+
+// const ad = "asdasdasd";
+
+// ad = "sdasd";
+
+// const adlar = ["Amil", "Samir", "Ilmas", "Ismayil"];
+
+// console.info(adlar);
+
+// adlar.push("Asim");
+
+// console.warn(adlar);

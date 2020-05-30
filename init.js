@@ -1,5 +1,5 @@
 let searchButton = document.querySelector("button");
-let searchCity = document.querySelector("#city");
+let searchCity = document.querySelector("input");
 let loadingText = document.querySelector("#load");
 let weatherBox = document.querySelector("#weather");
 let weatherCity = weatherBox.firstElementChild;
